@@ -1,3 +1,5 @@
+[![PWC](https://img.shields.io/endpoint.svg?url=https://paperswithcode.com/badge/relation-preserving-triplet-mining-for/vehicle-re-identification-on-veri-776)](https://paperswithcode.com/sota/vehicle-re-identification-on-veri-776?p=relation-preserving-triplet-mining-for)
+
 # Relation Preserving Triplet Mining
   
 The *official* repository for [Relation Preserving Triplet Mining for Stabilising the Triplet Loss in Re-identification Sytems](https://openaccess.thecvf.com/content/WACV2023/html/Ghosh_Relation_Preserving_Triplet_Mining_for_Stabilising_the_Triplet_Loss_In_WACV_2023_paper.html), published at WACV 2023. Our work achieves state-of-the-art results for person and vehicle re-identification and provides a faster optimised and more generalisable model for re-identification.
