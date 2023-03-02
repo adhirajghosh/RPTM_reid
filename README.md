@@ -42,8 +42,22 @@ data
 ```
 
 ### Prepare GMS Feature Matches
-You need to download the GMS feature matches for VeRi, VehicleID and DukeMTMC: [GMS](https://drive.google.com/drive/folders/1hdk3pi4Bi_Tb2B7XcBmvwG91Sfisi6BO?usp=share_link)
+```bash
+mkdir gms
+```
 
+You need to download the GMS feature matches for VeRi, VehicleID and DukeMTMC: [GMS](https://drive.google.com/drive/folders/1hdk3pi4Bi_Tb2B7XcBmvwG91Sfisi6BO?usp=share_link).
+
+The folder should follow the structure as shown below:
+```
+gms
+├── duke
+│   └── 0001.pkl ..
+├── vehicleid
+│   └── 00001.pkl ..
+└── veri
+    └── 001.pkl ..
+```
 ## Running RPTM
 1. Training
 ```bash
@@ -67,6 +81,7 @@ python main.py --config_file configs/veri_r101.yml MODEL.RPTM_SELECT 'max'
 
 3. Testing
 ```bash
+mkdir logs
 python main.py --config_file configs/veri_r101.yml TEST.WEIGHT '<path to trained model>' TEST.EVAL True 
 ```
 
