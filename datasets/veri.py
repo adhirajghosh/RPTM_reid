@@ -11,7 +11,7 @@ from .base import BaseImageDataset
 
 class VeRi(BaseImageDataset):
 
-    dataset_dir = 'VeRi'
+    dataset_dir = 'veri'
 
     def __init__(self, root='datasets', dataset_dir = 'VeRi', verbose=True, **kwargs):
         super(VeRi, self).__init__(root)

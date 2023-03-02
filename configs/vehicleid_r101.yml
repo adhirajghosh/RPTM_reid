@@ -1,0 +1,77 @@
+MODEL:
+  PRETRAIN_CHOICE: 'imagenet'
+  ARCH: 'resnet101_ibn_a'
+  DROPRATE: 0
+  STRIDE: 1
+  POOL: 'avg'
+  GPU_ID: ('0')
+  RPTM_SELECT: 'mean'
+
+INPUT:
+  HEIGHT: 128
+  WIDTH: 128
+  PROB: 0.5 # random horizontal flip
+  RANDOM_ERASE: True
+  JITTER: True
+  AUG: True
+
+
+DATASET:
+  SOURCE_NAME: ['vehicleid']
+  TARGET_NAME: ['vehicleid']
+  ROOT_DIR: './data/'
+  TRAIN_DIR: './data/vehicleid/image_train/'
+  SPLIT_DIR: './data/vehicleid/train_split/'
+
+DATALOADER:
+  SAMPLER: 'RandomSampler'
+  NUM_INSTANCE: 6
+  NUM_WORKERS: 16
+
+SOLVER:
+  OPTIMIZER_NAME: 'sgd'
+  MAX_EPOCHS: 40
+  BASE_LR: 0.005
+  LR_SCHEDULER: 'multi-step'
+  STEPSIZE: [10, 20, 30]
+  GAMMA: 0.1
+  WEIGHT_DECAY: 5e-4
+  MOMENTUM: 0.9
+  SGD_DAMP: 0.0
+  NESTEROV: True
+  WARMUP_FACTOR: 0.01
+  WARMUP_EPOCHS: 10
+  WARMUP_METHOD: 'linear'
+  LARGE_FC_LR: False
+  TRAIN_BATCH_SIZE: 20
+  USE_AMP: False
+  CHECKPOINT_PERIOD: 10
+  LOG_PERIOD: 50
+  EVAL_PERIOD: 1
+
+LOSS:
+  MARGIN: 1.0
+  LAMBDA_HTRI: 1.0
+  LAMBDA_XENT: 1.0
+
+TEST:
+  EVAL: True
+  WEIGHT: ''
+  TEST_BATCH_SIZE: 100
+  TEST_SIZE: 800
+  RE_RANKING: True
+  VIS_RANK: True
+  NECK_FEAT: 'after'
+  FEAT_NORM: 'yes'
+
+MISC:
+  SAVE_DIR: './logs/vehicleid/'
+  GMS_PATH: './gms/vehicleid/'
+  INDEX_PATH: './pkl/vehicleid/index.pkl'
+  USE_GPU: True
+  PRINT_FREQ: 100
+  FP16: True
+
+
+
+

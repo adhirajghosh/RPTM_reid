@@ -1,11 +1,81 @@
-[![PWC](https://img.shields.io/endpoint.svg?url=https://paperswithcode.com/badge/relation-preserving-triplet-mining-for/vehicle-re-identification-on-veri-776)](https://paperswithcode.com/sota/vehicle-re-identification-on-veri-776?p=relation-preserving-triplet-mining-for)
-
 # Relation Preserving Triplet Mining
   
 The *official* repository for [Relation Preserving Triplet Mining for Stabilising the Triplet Loss in Re-identification Sytems](https://openaccess.thecvf.com/content/WACV2023/html/Ghosh_Relation_Preserving_Triplet_Mining_for_Stabilising_the_Triplet_Loss_In_WACV_2023_paper.html), published at WACV 2023. Our work achieves state-of-the-art results for person and vehicle re-identification and provides a faster optimised and more generalisable model for re-identification.
 
 ## Network Architecture
 ![Architecture](images/architecture.png)
+
+## Preparation
+
+### Installation
+
+1. Install CUDA compatible torch. Modify based on CUDA version.
+```
+conda install pytorch torchvision torchaudio pytorch-cuda=11.6 -c pytorch -c nvidia
+```
+2. Install other dependencies.
+```bash
+pip install -r requirements.txt
+```
+
+3. Install apex (optional but recommended)
+
+Follow the installation guidelines from https://github.com/NVIDIA/apex
+Then set SOLVER.USE_AMP as True in the config files directly or via command line.
+### Prepare Datasets
+
+```bash
+mkdir data
+```
+
+Download the vehicle reID datasets [VehicleID](https://www.pkuml.org/resources/pku-vehicleid.html) and [VeRi-776](https://github.com/JDAI-CV/VeRidataset), and the person reID datasets [DukeMTMC-reID](https://arxiv.org/abs/1609.01775).
+Follow the structure and naming convention as below.
+
+```
+data
+├── duke
+│   └── images ..
+├── vehicleid
+│   └── images ..
+└── veri
+    └── images ..
+```
+
+### Prepare GMS Feature Matches
+You need to download the GMS feature matches for VeRi, VehicleID and DukeMTMC: [GMS](https://drive.google.com/drive/folders/1hdk3pi4Bi_Tb2B7XcBmvwG91Sfisi6BO?usp=share_link)
+
+## Running RPTM
+1. Training
+```bash
+python main.py --config_file configs/veri_r101.yml 
+```
+The above command trains a baseline using our RPTM algorithm for VeRi. Note that after training, the model provides evaluation results, both qualitative as well as quantitative.
+
+2. RPTM Thresholding Strategies
+
+In Section 4.2 of our paper, we defined a thresholding strategy for better anchor-positive selections. We define this in config files as MODEL.RPTM_SELECT. While it is set to 'mean', feel free to working with 'min' and 'max'.
+
+#### Min Thresholding
+```bash
+python main.py --config_file configs/veri_r101.yml MODEL.RPTM_SELECT 'min'
+```
+
+#### Max Thresholding
+```bash
+python main.py --config_file configs/veri_r101.yml MODEL.RPTM_SELECT 'max'
+```
+
+3. Testing
+```bash
+python main.py --config_file configs/veri_r101.yml TEST.WEIGHT '<path to trained model>' TEST.EVAL True 
+```
+
+## Mean Average Precision(mAP) Results
+1. VeRi776: **88.0%**
+2. VehicleID (query size 800): **84.8%**
+3. VehicleID (query size 1600): **81.2%**
+4. VehicleID (query size 2400): **80.5%**
+5. DukeMTMC: **89.2%**
 
 ## Acknowledgement
 
@@ -28,4 +98,4 @@ If you find this code useful for your research, please cite our paper
 
 ## Contact
 
-If you have any question, please feel free to contact us. E-mail: [adhirajghosh1998@gmail.com](mailto:adhirajghosh1998@gmail.com) , [Wen-Yan Lin](mailto:daniellin@smu.edu.sg)
+If you have any question, please feel free to contact us. E-mail: [Adhiraj Ghosh](mailto:adhirajghosh1998@gmail.com) , [Wen-Yan Lin](mailto:daniellin@smu.edu.sg)

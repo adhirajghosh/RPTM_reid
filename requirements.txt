@@ -1,0 +1,8 @@
+timm
+yacs
+opencv-python
+albumentations
+matplotlib
+umap-learn
+Pillow
+pretrainedmodels
