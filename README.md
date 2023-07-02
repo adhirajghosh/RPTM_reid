@@ -1,3 +1,5 @@
+[![PWC](https://img.shields.io/endpoint.svg?url=https://paperswithcode.com/badge/relation-preserving-triplet-mining-for/vehicle-re-identification-on-veri-776)](https://paperswithcode.com/sota/vehicle-re-identification-on-veri-776?p=relation-preserving-triplet-mining-for)
+[![PWC](https://img.shields.io/endpoint.svg?url=https://paperswithcode.com/badge/relation-preserving-triplet-mining-for/vehicle-re-identification-on-vehicleid-small)](https://paperswithcode.com/sota/vehicle-re-identification-on-vehicleid-small?p=relation-preserving-triplet-mining-for)
 # Relation Preserving Triplet Mining
   
 The *official* repository for [Relation Preserving Triplet Mining for Stabilising the Triplet Loss in Re-identification Sytems](https://openaccess.thecvf.com/content/WACV2023/html/Ghosh_Relation_Preserving_Triplet_Mining_for_Stabilising_the_Triplet_Loss_In_WACV_2023_paper.html), published at WACV 2023. Our work achieves state-of-the-art results for person and vehicle re-identification and provides a faster optimised and more generalisable model for re-identification.
@@ -67,7 +69,7 @@ The above command trains a baseline using our RPTM algorithm for VeRi. Note that
 
 2. RPTM Thresholding Strategies
 
-In Section 4.2 of our paper, we defined a thresholding strategy for better anchor-positive selections. We define this in config files as MODEL.RPTM_SELECT. While it is set to 'mean', feel free to working with 'min' and 'max'.
+In Section 4.2 of our paper, we defined a thresholding strategy for better anchor-positive selections. We define this in config files as MODEL.RPTM_SELECT. While it is set to 'mean', feel free to work with 'min' and 'max'.
 
 #### Min Thresholding
 ```bash
@@ -113,4 +115,4 @@ If you find this code useful for your research, please cite our paper
 
 ## Contact
 
-If you have any question, please feel free to contact us. E-mail: [Adhiraj Ghosh](mailto:adhirajghosh1998@gmail.com) , [Wen-Yan Lin](mailto:daniellin@smu.edu.sg)
+If you have any questions, please feel free to contact us. E-mail: [Adhiraj Ghosh](mailto:adhirajghosh1998@gmail.com) , [Wen-Yan Lin](mailto:daniellin@smu.edu.sg)
