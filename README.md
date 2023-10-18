@@ -1,9 +1,21 @@
-  [![PWC](https://img.shields.io/endpoint.svg?url=https://paperswithcode.com/badge/relation-preserving-triplet-mining-for/vehicle-re-identification-on-veri-776)](https://paperswithcode.com/sota/vehicle-re-identification-on-veri-776?p=relation-preserving-triplet-mining-for)
-  [![PWC](https://img.shields.io/endpoint.svg?url=https://paperswithcode.com/badge/relation-preserving-triplet-mining-for/vehicle-re-identification-on-vehicleid-small)](https://paperswithcode.com/sota/vehicle-re-identification-on-vehicleid-small?p=relation-preserving-triplet-mining-for)
+<div align='center'>
+<h2 align="center"> Relation Preserving Triplet Mining for Stabilising the Triplet Loss in Re-identification Sytems </h2>
+<h3 align="center">WACV 2023</h3>
 
-# Relation Preserving Triplet Mining
+<a href="https://adhirajghosh.github.io/">Adhiraj Ghosh</a><sup>1,2</sup>, <a href="https://kuruparan.github.io/">Kuruparan Shanmugalingam</a><sup>1,3</sup>, <a href="https://www.kind-of-works.com/">Wen-Yan Lin</a><sup>1</sup>
 
-The *official* repository for [Relation Preserving Triplet Mining for Stabilising the Triplet Loss in Re-identification Sytems](https://openaccess.thecvf.com/content/WACV2023/html/Ghosh_Relation_Preserving_Triplet_Mining_for_Stabilising_the_Triplet_Loss_In_WACV_2023_paper.html), published at WACV 2023. Our work achieves state-of-the-art results for person and vehicle re-identification and provides a faster optimised and more generalisable model for re-identification.
+<sup>1</sup>Singapore Management University <sup>2</sup>University of Tübingen <sup>3</sup>University of New South Wales
+
+[![PWC](https://img.shields.io/endpoint.svg?url=https://paperswithcode.com/badge/relation-preserving-triplet-mining-for/vehicle-re-identification-on-veri-776)](https://paperswithcode.com/sota/vehicle-re-identification-on-veri-776?p=relation-preserving-triplet-mining-for)
+[![PWC](https://img.shields.io/endpoint.svg?url=https://paperswithcode.com/badge/relation-preserving-triplet-mining-for/vehicle-re-identification-on-vehicleid-small)](https://paperswithcode.com/sota/vehicle-re-identification-on-vehicleid-small?p=relation-preserving-triplet-mining-for)
+
+<a href="https://pytorch.org/get-started/locally/"><img alt="PyTorch" src="https://img.shields.io/badge/PyTorch-ee4c2c?logo=pytorch&logoColor=white"></a>
+
+[[Paper](https://openaccess.thecvf.com/content/WACV2023/html/Ghosh_Relation_Preserving_Triplet_Mining_for_Stabilising_the_Triplet_Loss_In_WACV_2023_paper.html)]
+[[Video](https://youtu.be/TseV_Hoz2Ms?si=VlAReJ2eETPmYKh1)]
+
+The *official* repository for **Relation Preserving Triplet Mining for Stabilising the Triplet Loss in Re-identification Sytems**. Our work achieves state-of-the-art results and provides a faster optimised and more generalisable model for re-identification.
+</div>
 
 ## Network Architecture
 ![Architecture](images/architecture.png)
