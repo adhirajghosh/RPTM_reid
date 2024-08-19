@@ -73,6 +73,9 @@ gms
 └── veri
     └── 001.pkl ..
 ```
+
+You can also create your own GMS matches for VeRi-776, VeRi-Wild and VehicleID by running the following script: ```utils/create_gms_index.py```. You can edit which Dataset to build GMS matches for by editing the initial parameters inside the script.
+
 ## Running RPTM
 1. Training
 ```bash
